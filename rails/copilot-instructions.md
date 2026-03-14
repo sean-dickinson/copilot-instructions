@@ -10,8 +10,13 @@
 ## Responsibility split
 - Controllers: handle HTTP, load records, authorize, delegate business logic.
 - Models: behavior intrinsic to a record, validations, scopes.
-- Service objects: Prefer using the ActiveRecord::AssociatedObject gem
 - Query objects: only when a query is complex and reused.
+
+## Domain logic and service objects
+- Do not generate service objects in `app/services` for model-related workflows.
+- Prefer `ActiveRecord::AssociatedObject` instead — see `.github/instructions/associated_objects.instructions.md`.
+- Use the generator: `bin/rails generate associated ModelName::CollaboratorName`
+- Only reach for a plain PORO or service object for logic that genuinely doesn't belong to any single model.
 
 ## Security
 - Follow Rails secure defaults.
