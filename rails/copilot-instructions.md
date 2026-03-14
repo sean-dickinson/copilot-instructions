@@ -42,3 +42,4 @@
 - Make the smallest change that fully solves the problem.
 - Preserve existing architecture unless refactoring is the task.
 - When uncertain, prefer the more conventional Rails solution with simpler tests.
+- Prefer using rails generators over manually creating files
